@@ -13,6 +13,9 @@
         git add arquivo.xxx     
         git add pasta/
 
+    - Sobe os commits pro github.com
+        git push
+
     - Remover um arquivo que foi adicionado incorretamente a um commit 
         git rm --cached arquivo.xxx
 
