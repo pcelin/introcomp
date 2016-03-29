@@ -1,0 +1,35 @@
+[GIT] 
+    - Configuraçoes iniciais
+        git config --global user.name "Marcelo Paiva"
+        git config --global user.email paiva.mna@gmail.com
+
+    - Clonar repositorio no diretorio de trabalho
+        git clone https://github.com/pcelin/introcomp
+
+    - SEMPRE RODAR ANTES DE TUDO Ver o status do branch de trabalho (ramo)
+        git status
+
+    - Adicionar um arquivo (ou pasta) ao proximo commit (versão do repositorio)
+        git add arquivo.xxx     
+        git add pasta/
+
+    - Remover um arquivo que foi adicionado incorretamente a um commit 
+        git rm --cached arquivo.xxx
+
+    - Commitar (se comprometer a nova versao)
+        git commit -m "Mensagem no presente do commit"
+
+[Terminal]
+    - Mudar de pasta
+        cd pasta
+    - Criar pasta
+        mkdir pasta
+    - Subir uma pasta
+        cd ..
+ 
+[Compilacao com GCC]
+    - Para compilar um programa ep1.c em ANSI C90 com todos os WARNINGS
+        gcc -Wall -ansi -o ep1.c
+    - Para rodar
+        ./ep1
+    
