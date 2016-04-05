@@ -18,6 +18,7 @@ int main() {
     int curjog=0;
     int i;
     int aux;
+    int aux2;
     printf("Jogo da Velha Dancarina\n");
     printf("Tabuleiro inicial: ");
     scanf("%d", &tabuleiro);
@@ -91,6 +92,17 @@ int main() {
                     a2=aux;                
                 }            
             }
+            if (jogada==0) {
+                aux2=a1;
+                a1=a4;
+                a4=a7;
+                a7=a8;
+                a8=a9;
+                a9=a6;
+                a6=a3;
+                a3=a2;
+                a2=aux2;      
+            }    
 
             printf("%d|%d|%d\n",a1,a2,a3);
             printf("-+-+-\n");
