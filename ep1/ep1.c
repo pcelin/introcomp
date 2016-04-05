@@ -82,15 +82,38 @@ int main() {
             printf("-+-+-\n");
             printf("%d|%d|%d\n",a7,a8,a9);
 
-            if (a1==a2&&a2==a3&&a3==curjog) printf("O jogador %d completou a 1a linha!", curjog);           
-            if (a1==a4&&a4==a7&&a7==curjog) printf("O jogador %d completou a 1a coluna!", curjog);
-            if (a4==a5&&a5==a6&&a6==curjog) printf("O jogador %d completou a 2a linha!", curjog);
-            if (a2==a5&&a5==a8&&a8==curjog) printf("O jogador %d completou a 2a coluna!", curjog);
-            if (a7==a8&&a8==a9&&a9==curjog) printf("O jogador %d completou a 3a linha!", curjog);
-            if (a3==a6&&a6==a9&&a9==curjog) printf("O jogador %d completou a 3a coluna!", curjog);
-            if (a1==a5&&a5==a9&&a9==curjog) printf("O jogador %d completou a diagonal principal!", curjog);
-            if (a3==a5&&a5==a7&&a7==curjog) printf("O jogador %d completou a diagonal secundaria!", curjog);
-            
+            if (a1==a2&&a2==a3&&a3==curjog) {
+                printf("O jogador %d completou a 1a linha!\n", curjog);           
+                cont=0;
+            }
+            if (a1==a4&&a4==a7&&a7==curjog) {
+                printf("O jogador %d completou a 1a coluna!\n", curjog);
+                cont=0;
+            }
+            if (a4==a5&&a5==a6&&a6==curjog) {
+                printf("O jogador %d completou a 2a linha!\n", curjog);
+                cont=0;
+            }
+            if (a2==a5&&a5==a8&&a8==curjog) {
+                printf("O jogador %d completou a 2a coluna!\n", curjog);
+                cont=0;
+            }
+            if (a7==a8&&a8==a9&&a9==curjog) {
+                printf("O jogador %d completou a 3a linha!\n", curjog);
+                cont=0;
+            }
+            if (a3==a6&&a6==a9&&a9==curjog) {
+                printf("O jogador %d completou a 3a coluna!\n", curjog);
+                cont=0;
+            }
+            if (a1==a5&&a5==a9&&a9==curjog) {
+                printf("O jogador %d completou a diagonal principal!\n", curjog);
+                cont=0;
+            }
+            if (a3==a5&&a5==a7&&a7==curjog) {
+                printf("O jogador %d completou a diagonal secundaria!\n", curjog);
+                cont=0;
+            }            
        }           
     }
     return 0;
