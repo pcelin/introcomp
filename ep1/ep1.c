@@ -12,7 +12,8 @@ int main() {
     int a3;
     int a2;
     int a1;
-    int cont=1;
+    int ganhou1=0;
+    int ganhou2=0;
     int jogada=0;
     int jog=1;
     int curjog=0;
@@ -52,7 +53,7 @@ int main() {
         printf("O jogo terminou empatado\n");
     }
     else { 
-        while (cont!=0) {
+        while (ganhou1==0&&ganhou2==0) {
             printf("(Jogador %d) Proxima jogada: ", jog);
             scanf("%d", &jogada);
             curjog=jog;
@@ -110,38 +111,73 @@ int main() {
             printf("-+-+-\n");
             printf("%d|%d|%d\n",a7,a8,a9);
 
-            if (a1==a2&&a2==a3&&a3==curjog) {
-                printf("O jogador %d completou a 1a linha!\n", curjog);           
-                cont=0;
+            if (a1==a2&&a2==a3&&a3==1) {
+                printf("O jogador 1 completou a 1a linha!\n");           
+                ganhou1=1;
             }
-            if (a1==a4&&a4==a7&&a7==curjog) {
-                printf("O jogador %d completou a 1a coluna!\n", curjog);
-                cont=0;
+            if (a1==a4&&a4==a7&&a7==1) {
+                printf("O jogador 1 completou a 1a coluna!\n");
+                ganhou1=1;
             }
-            if (a4==a5&&a5==a6&&a6==curjog) {
-                printf("O jogador %d completou a 2a linha!\n", curjog);
-                cont=0;
+            if (a4==a5&&a5==a6&&a6==1) {
+                printf("O jogador 1 completou a 2a linha!\n");
+                ganhou1=1;
             }
-            if (a2==a5&&a5==a8&&a8==curjog) {
-                printf("O jogador %d completou a 2a coluna!\n", curjog);
-                cont=0;
+            if (a2==a5&&a5==a8&&a8==1) {
+                printf("O jogador 1 completou a 2a coluna!\n");
+                ganhou1=1;
             }
             if (a7==a8&&a8==a9&&a9==curjog) {
-                printf("O jogador %d completou a 3a linha!\n", curjog);
-                cont=0;
+                printf("O jogador 1 completou a 3a linha!\n");
+                ganhou1=1;
             }
             if (a3==a6&&a6==a9&&a9==curjog) {
-                printf("O jogador %d completou a 3a coluna!\n", curjog);
-                cont=0;
+                printf("O jogador 1 completou a 3a coluna!\n");
+                ganhou1=1;
             }
             if (a1==a5&&a5==a9&&a9==curjog) {
-                printf("O jogador %d completou a diagonal principal!\n", curjog);
-                cont=0;
+                printf("O jogador 1 completou a diagonal principal!\n");
+                ganhou1=1;
             }
             if (a3==a5&&a5==a7&&a7==curjog) {
-                printf("O jogador %d completou a diagonal secundaria!\n", curjog);
-                cont=0;
+                printf("O jogador 1 completou a diagonal secundaria!\n");
+                ganhou1=1;
             }                    
+            if (a1==a2&&a2==a3&&a3==2) {
+                printf("O jogador 2 completou a 1a linha!\n");           
+                ganhou2=1;
+            }
+            if (a1==a4&&a4==a7&&a7==2) {
+                printf("O jogador 2 completou a 1a coluna!\n");
+                ganhou2=1;
+            }
+            if (a4==a5&&a5==a6&&a6==2) {
+                printf("O jogador 2 completou a 2a linha!\n");
+                ganhou2=1;
+            }
+            if (a2==a5&&a5==a8&&a8==2) {
+                printf("O jogador 2 completou a 2a coluna!\n");
+                ganhou2=1;
+            }
+            if (a7==a8&&a8==a9&&a9==2) {
+                printf("O jogador 2 completou a 3a linha!\n");
+                ganhou2=1;
+            }
+            if (a3==a6&&a6==a9&&a9==2) {
+                printf("O jogador 2 completou a 3a coluna!\n");
+                ganhou2=1;
+            }
+            if (a1==a5&&a5==a9&&a9==2) {
+                printf("O jogador 2 completou a diagonal principal!\n");
+                ganhou2=1;
+            }
+            if (a3==a5&&a5==a7&&a7==2) {
+                printf("O jogador 2 completou a diagonal secundaria!\n");
+                ganhou2=1;
+            }                    
+        
+            if (ganhou1==1&&ganhou2==1) printf ("Os dois ganharam!\n");
+        
         }           
     }
     return 0;
