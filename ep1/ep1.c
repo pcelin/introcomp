@@ -16,7 +16,8 @@ int main() {
     int jogada=0;
     int jog=1;
     int curjog=0;
-    
+    int i;
+    int aux;
     printf("Jogo da Velha Dancarina\n");
     printf("Tabuleiro inicial: ");
     scanf("%d", &tabuleiro);
@@ -76,6 +77,21 @@ int main() {
             if (jogada==33&&a9!=0) printf("Perdeu a vez!\n");
             if (jogada==33&&a9==0) a9=curjog;
            
+            if (1<=jogada&&jogada<=9) {
+                for (i=0;i<jogada;i++) {               
+                    aux=a1;
+                    a1=a9;
+                    a9=a8;
+                    a8=a7;
+                    a7=a6;
+                    a6=a5;
+                    a5=a4;
+                    a4=a3;
+                    a3=a2;
+                    a2=aux;                
+                }            
+            }
+
             printf("%d|%d|%d\n",a1,a2,a3);
             printf("-+-+-\n");
             printf("%d|%d|%d\n",a4,a5,a6);
@@ -113,8 +129,8 @@ int main() {
             if (a3==a5&&a5==a7&&a7==curjog) {
                 printf("O jogador %d completou a diagonal secundaria!\n", curjog);
                 cont=0;
-            }            
-       }           
+            }                    
+        }           
     }
     return 0;
 }
