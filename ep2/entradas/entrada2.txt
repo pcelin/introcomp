@@ -1,0 +1,7 @@
+ringtone2.wav
+0.01
+0.01 60 0.5
+
+Mais um exemplo com duracao infima, para depuracao usando o programa wav2txt
+
+

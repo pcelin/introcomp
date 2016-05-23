@@ -1,0 +1,6 @@
+ringtone1.wav
+0.01
+0.01 48 1
+
+Este exemplo gera um arquivo de audio com duracao infima, que pode ser inspecionado usando o programa wav2txt
+
