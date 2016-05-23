@@ -89,7 +89,28 @@ double sen(double x) {
 }
 
 double exp(double x) {
-    return x;
+    long double termo;
+    long double soma;
+    int n;
+    long double num, den;
+
+    num = x;   
+    den = 1;
+    n = 1;
+    soma = 0;
+    
+    termo = EPSILON;
+    
+    while (modulo(termo) >= EPSILON) {
+        
+        termo = num/den;
+        num = num * x;
+        den = den * (n + 1);
+        soma = 1 + termo;
+    }
+   
+    return soma;
+
 }
 
 double ln(double x) {
@@ -118,7 +139,7 @@ int main() {
     int cur_altura;
 
 
-    printf("Seno 40=%lf\n", sen(40));
+    printf("Exp 40=%lf\n", exp(3.5));
 
     scanf("%s", nomesaida);
     printf("nomesaida: %s\n", nomesaida); 
