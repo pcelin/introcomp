@@ -62,11 +62,11 @@ double modulo(double x) {
 }
 
 double sen(double x) {
-    long double termo;
-    long double soma;
+    double termo;
+    double soma;
     int sinal;
     int n;
-    long double num, den;
+    double num, den;
 
     soma = 0;
     sinal = 1;
@@ -89,15 +89,15 @@ double sen(double x) {
 }
 
 double exp(double x) {
-    long double termo;
-    long double soma;
+    double termo;
+    double soma;
     int n;
-    long double num, den;
+    double num, den;
 
     num = x;   
     den = 1;
     n = 1;
-    soma = 0;
+    soma = 1;
     
     termo = EPSILON;
     
@@ -106,16 +106,33 @@ double exp(double x) {
         termo = num/den;
         num = num * x;
         den = den * (n + 1);
-        soma = 1 + termo;
+        soma += termo;
+        n++;
     }
    
     return soma;
 
 }
 
+
+
 double ln(double x) {
-    return x;
+   
+
+    double termo;
+    double soma;
+     
+    soma = 1;
+    termo = EPSILON;
+    
+    printf("exp 1 : %lf \n", exp(1));
+    while (modulo(termo) >= EPSILON) {
+        termo = -1 + x/exp(soma);
+        soma = soma + termo;              
+    }
+    return soma;
 }
+
 
 
 double pot(double x, double y) {
@@ -139,7 +156,7 @@ int main() {
     int cur_altura;
 
 
-    printf("Exp 40=%lf\n", exp(3.5));
+    printf("ln 25=%f\n", ln(25));
 
     scanf("%s", nomesaida);
     printf("nomesaida: %s\n", nomesaida); 
