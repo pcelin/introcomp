@@ -52,10 +52,40 @@ int escreve_amostra(FILE *saida_wav, double amostra);
 double sen(double x);
 double exp(double x);
 double ln(double x);
+double modulo(double x);
 
+double modulo(double x) {
+    if (x < 0) 
+        return -x;
+    else 
+        return x;     
+}
 
 double sen(double x) {
-    return x;
+    long double termo;
+    long double soma;
+    int sinal;
+    int n;
+    long double num, den;
+
+    soma = 0;
+    sinal = 1;
+    num = x;   
+    den = 1;
+    n = 1;
+    termo = EPSILON;
+    while (modulo(termo) >= EPSILON) {
+        
+        termo = sinal * num/den;        
+        num = num * x * x;
+        den = den * (2*n) * (2*n + 1);
+        soma += termo;    
+        sinal = -sinal;
+        n = n + 1;
+    }
+    
+    return soma;
+
 }
 
 double exp(double x) {
@@ -86,6 +116,9 @@ int main() {
     double soma_duracao;
     double cur_dur, cur_amp;
     int cur_altura;
+
+
+    printf("Seno 40=%lf\n", sen(40));
 
     scanf("%s", nomesaida);
     printf("nomesaida: %s\n", nomesaida); 
